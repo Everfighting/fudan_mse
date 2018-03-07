@@ -1,0 +1,127 @@
+Lessons for New pandas Users
+
+http://nbviewer.jupyter.org/urls/bitbucket.org/hrojas/learn-pandas/raw/master/lessons/01%20-%20Lesson.ipynb
+
+
+
+
+
+
+
+pd.DataFrame 如何创建
+
+.std()  求标准差么？
+
+
+.transform 的相关用法
+
+
+.apply(s)
+
+s为一个处理函数
+
+
+
+
+We can now start to select pieces of the dataframe using loc.
+
+
+
+read_sql_query
+
+
+
+
+
+---------------------
+
+
+能不能把数据放入一个text中，再做风格pandas
+
+
+1、读取table，分隔符，不设定head ，设定name
+pd.read_table(f, sep='-', index_col=0, header=None, names=['A','B','C'], lineterminator='\n')
+
+2、读取csv,获取某列数据，组合年列数据，赋值增加一列数据
+. 与 [] 区别？
+
+3、movies.head() movies.describe() movies.dtypes
+movies.describe(include=object)
+
+I'd love to have tooltip(using Shift Tab in jupyter notebook) to show the help/list of arguments. .
+
+4、rename columns
+ufo.rename(columns={'A':'a','B':'b'})
+ufo.columns = =['a','b']
+pd.read_csv(path,names=[,,,],header=0)
+ufo.columns.str.replace(' ', '_' )
+
+5、remove columns
+ufo.drop('colors Reported', axis=1, inplace=True)
+ufo.drop([0,1], axis=0, inplace=True)
+axis=0 along the rows (namely, index in pandas), and axis=1 along the columns.
+
+
+6、sort
+movies['title'].sort_values(ascending=False)
+movies.sort_values('title',ascending=False)
+movies.sort(['title','name'])
+
+7、
+is_long = movies.duration >= 200
+movies(is_long)
+movies[movies.duration >= 200]
+
+8、
+movie.shape
+pd.Series
+movies.loc[movies.duration >= 200,'genra']
+
+
+9、
+movies[(movies.duration >= 200) and (movies.genre == 'Drama')]
+movies[movies.genre.isin(['Crime','Drama'])]
+
+10、
+drinks.describe(include=['object','float64'])
+
+11、
+drinks.drop(2, axis=0).head()
+axis = 0 rows
+axis = 1 columns
+drinks.mean(2, axis=0).head()
+axis = 1 == axis = 'columns'
+
+
+12、字符串处理 加入 str
+orders.items_name.str
+
+str.replace 替换知乎
+astype(float) 转换类型
+
+13、.agg获取表格的形状
+%mathplotlib inline 
+plot(kind='bar')
+
+14、describe() 查看内容
+
+15、missing value处理方式
+
+16、isnull,notnull
+ufo.isnull().sum()
+
+17、ufo.dropna(how='any')
+删除任一值为na的对象
+drinks.columns
+drinks.index
+drinks.loc([23,'beer_servings'])
+
+18、
+
+
+
+
+
+
+
+
